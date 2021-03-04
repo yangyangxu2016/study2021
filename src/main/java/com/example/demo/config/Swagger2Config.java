@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.config;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.springframework.context.annotation.Bean;
@@ -22,6 +22,8 @@ import java.util.List;
  * todo
  * author：xuyy
  * date：2021/3/3  5:19 下午
+ * swagger2:http://localhost:9000/swagger-ui.html#
+ * swagger2-ui:http://localhost:9000/doc.html#/home
  */
 @Configuration
 @EnableSwagger2
@@ -39,8 +41,8 @@ public class Swagger2Config {
                 //兼容allinone而改造，因Api.class在同一个容器共享，不能区分web端api和openApi 20/11/13 tmh
                 .apis(RequestHandlerSelectors.basePackage("com.example.demo.controller"))
                 .paths(PathSelectors.any())
-                .build();
-        //.securitySchemes(unifiedAuth());
+                .build()
+                .securitySchemes(unifiedAuth());
         return docket;
 
     }
@@ -48,8 +50,8 @@ public class Swagger2Config {
     //基本信息的配置，信息会在api文档上显示
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("私有云openApi文档")
-                .contact(new Contact("megvii", "", "www.megvii.com"))
+                .title("study2021文档")
+                .contact(new Contact("xuyy", "", "1425809544@qq.com"))
                 .version("1.0.0")
                 .build();
     }
