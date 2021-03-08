@@ -29,7 +29,7 @@ import java.util.concurrent.ThreadFactory;
 @Slf4j
 //@Configuration
 //@EnableScheduling
-public class Schedule2 implements SchedulingConfigurer {
+public class DynamicScheduleTask implements SchedulingConfigurer {
 
     @Resource
     private CronMapper cronMapper;

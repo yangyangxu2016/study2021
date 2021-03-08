@@ -18,8 +18,8 @@ import java.util.concurrent.TimeUnit;
  */
 @Slf4j
 @Configuration
-@EnableScheduling
-public class StaticTask {
+//@EnableScheduling
+public class StaticsScheduleTask {
     /**
      * 测试定时1s，内部任务小于1s，会每各一秒执行
      */
