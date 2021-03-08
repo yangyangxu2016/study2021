@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.3</version>
+        <version>2.2.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -28,11 +28,6 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
@@ -41,6 +36,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
 
         <!--lombok插件-->
         <dependency>
@@ -51,7 +47,7 @@
         </dependency>
 
 
-        <!-- swagger 文档-->
+        <!-- swagger 文档 start -->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-spring-boot-starter</artifactId>
@@ -67,6 +63,7 @@
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
         </dependency>
+        <!-- swagger 文档 end-->
 
         <!-- https://mvnrepository.com/artifact/org.jodd/jodd-core -->
         <dependency>
@@ -79,6 +76,13 @@
 
     <build>
         <plugins>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <!-- docker 打包-->
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
@@ -86,7 +90,7 @@
                 <executions>
                     <execution>
                         <id>default</id>
-                        <!--                        <phase>none</phase>-->
+                        <!-- <phase>none</phase>-->
                         <goals>
                             <goal>build</goal>
                         </goals>
@@ -100,6 +104,8 @@
                     </buildArgs>
                 </configuration>
             </plugin>
+
+
         </plugins>
     </build>
 
