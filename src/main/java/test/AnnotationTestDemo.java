@@ -1,6 +1,7 @@
 package test;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.core.io.support.SpringFactoriesLoader;
 
 import java.util.stream.Stream;
 
@@ -12,13 +13,15 @@ import java.util.stream.Stream;
 public class AnnotationTestDemo {
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(ImportDemoTest.class);
-        String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
-        Stream.of(beanDefinitionNames).forEach(
-                s -> {
-                    System.out.println(s);
-                }
-        );
+        //AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(ImportDemoTest.class);
+        //String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+        //Stream.of(beanDefinitionNames).forEach(
+        //        s -> {
+        //            System.out.println(s);
+        //        }
+        //);
+        //
+        //SpringFactoriesLoader.loadFactoryNames(source, getClass().getClassLoader());
 
     }
 }
