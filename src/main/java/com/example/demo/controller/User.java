@@ -16,4 +16,5 @@ public class User {
 
     @ApiModelProperty(value = "用户名", example = "xuyy",required = true)
     private String username;
+
 }

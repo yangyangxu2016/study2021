@@ -2,6 +2,7 @@ package com.example.demo.factory.factorymethod;
 
 import com.example.demo.factory.ICourse;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * todo
@@ -23,15 +24,20 @@ import org.slf4j.LoggerFactory;
 public class FactoryMethodTest {
 
     public static void main(String[] args) {
-        ICourseFactory factory = new JavaCourseFactoryImpl();
-        ICourse course = factory.create();
-        course.record();
+        //ICourseFactory factory = new JavaCourseFactoryImpl();
+        //ICourse course = factory.create();
+        //course.record();
+        //
+        //factory = new PythonCourseFactoryImpl();
+        //course= factory.create();
+        //course.record();
+        //
+        //LoggerFactory.getILoggerFactory();
+        //System.out.println(11);
+        ////LoggerFactory.getLogger()
 
-        factory = new PythonCourseFactoryImpl();
-        course= factory.create();
-        course.record();
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application.yml");
+        System.out.println(context);
 
-        LoggerFactory.getILoggerFactory();
-        //LoggerFactory.getLogger()
     }
 }
