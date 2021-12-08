@@ -1,4 +1,4 @@
-package com.example.demo.algorithm;
+package com.example.demo.algorithm.middle;
 
 /**
  * https://leetcode-cn.com/problems/reverse-words-in-a-string/
