@@ -12,6 +12,15 @@ public class m_560_和为k的子数组 {
     public static void main(String[] args) {
         //输入：nums = [1,1,1], k = 2
         //输出：2
+        Integer test = 1;
+        if (test.equals(null)) {
+            System.out.println(1);
+        }
+        Boolean is = null;
+        if (is || test.equals(null)) {
+            System.out.println(1);
+        }
+
     }
 
     /**
@@ -22,7 +31,7 @@ public class m_560_和为k的子数组 {
      * @return
      */
     public int subarraySum(int[] nums, int k) {
-        //构建前缀和数组
+        //构建缀和数组
         int[] perNums = new int[nums.length + 1];
         for (int i = 0; i < nums.length; i++) {
             perNums[i + 1] = perNums[i] + nums[i];
@@ -40,5 +49,6 @@ public class m_560_和为k的子数组 {
         }
         return res;
     }
+
 
 }

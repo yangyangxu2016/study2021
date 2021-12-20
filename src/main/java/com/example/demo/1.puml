@@ -1,0 +1,8 @@
+@startuml
+"front" ->  "pangu-facade-web" : 离线强制删除设备
+            "pangu-facade-web" -> "algorithm-web" : deleteDeviceOffline(deviceId)
+                                  "algorithm-web" -> "algorithm-plugin-api"  : deleteDeviceOffline
+                                                                    "algorithm-plugin-api" -> "plugin-facade-safety"  :  select 所有布控，循环删除
+
+
+@enduml
