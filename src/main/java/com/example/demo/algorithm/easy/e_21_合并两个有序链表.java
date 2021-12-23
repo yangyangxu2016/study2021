@@ -40,7 +40,7 @@ public class e_21_合并两个有序链表 {
     }
 
 
-    public class ListNode {
+    class ListNode {
         int val;
         ListNode next;
 
