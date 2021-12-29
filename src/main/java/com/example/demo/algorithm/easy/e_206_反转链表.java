@@ -8,6 +8,33 @@ package com.example.demo.algorithm.easy;
  */
 public class e_206_反转链表 {
 
+
+    /**
+     * 输入：head = [1,2,3,4,5]
+     * 输出：[5,4,3,2,1]
+     *
+     * @param head
+     * @return
+     */
+    //public ListNode reverseList2(ListNode head) {
+    //
+    //    //    定义返回条件  只有一个节点了无需返回
+    //    if (head == null || head.next == null) {
+    //        return head;
+    //    }
+    //
+    //
+    //    //    处理
+    //
+    //
+    //    //    反转
+    //    head.next.next = head;
+    //    head.next = null;zz
+    //    //return last
+    //
+    //}
+
+
     /**
      * 输入：head = [1,2,3,4,5]
      * 输出：[5,4,3,2,1]
