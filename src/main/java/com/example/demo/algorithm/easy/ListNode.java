@@ -1,5 +1,6 @@
 package com.example.demo.algorithm.easy;
 
+
 /**
  * todo
  * date：2021/12/28  10:00 上午
@@ -14,4 +15,6 @@ public class ListNode {
         val = x;
         next = null;
     }
+
+
 }
