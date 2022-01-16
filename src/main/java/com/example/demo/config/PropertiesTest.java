@@ -21,10 +21,10 @@ public class PropertiesTest {
     private String name;
     private String pass;
 
-
-    @Bean
-    public void init3() {
-        System.out.println("name " + name + " pass: " + pass);
-    }
+    //
+    //@Bean
+    //public void init3() {
+    //    System.out.println("name " + name + " pass: " + pass);
+    //}
 
 }

@@ -16,13 +16,14 @@ import javax.validation.Valid;
  * author：xuyy
  * date：2021/3/2  6:18 下午
  */
-@Api(tags = "indexController",value = "valus")
+@Api(tags = "indexController",value = "value")
 @RestController
 public class IndexController {
 
     @ApiOperation(value = "首页", notes = "测试备注")
     @GetMapping("/index")
     public String index() {
+
         return "index";
     }
 

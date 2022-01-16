@@ -1,0 +1,106 @@
+Classfile /Users/xuyy/project/github/study2021/src/main/java/com/example/demo/thread/User.class
+  Last modified 2022-1-16; size 609 bytes
+  MD5 checksum 8c79d383e9be0c97ca5f9cf03ec174df
+  Compiled from "User.java"
+public abstract class com.example.demo.thread.User
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER, ACC_ABSTRACT
+Constant pool:
+   #1 = Methodref          #7.#20         // java/lang/Object."<init>":()V
+   #2 = Class              #21            // com/example/demo/thread/User
+   #3 = Fieldref           #22.#23        // java/lang/System.out:Ljava/io/PrintStream;
+   #4 = String             #24            // 我是锁
+   #5 = Methodref          #25.#26        // java/io/PrintStream.println:(Ljava/lang/String;)V
+   #6 = Methodref          #2.#27         // com/example/demo/thread/User.testSync:()V
+   #7 = Class              #28            // java/lang/Object
+   #8 = Utf8               <init>
+   #9 = Utf8               ()V
+  #10 = Utf8               Code
+  #11 = Utf8               LineNumberTable
+  #12 = Utf8               testSync
+  #13 = Utf8               StackMapTable
+  #14 = Class              #28            // java/lang/Object
+  #15 = Class              #29            // java/lang/Throwable
+  #16 = Utf8               main
+  #17 = Utf8               ([Ljava/lang/String;)V
+  #18 = Utf8               SourceFile
+  #19 = Utf8               User.java
+  #20 = NameAndType        #8:#9          // "<init>":()V
+  #21 = Utf8               com/example/demo/thread/User
+  #22 = Class              #30            // java/lang/System
+  #23 = NameAndType        #31:#32        // out:Ljava/io/PrintStream;
+  #24 = Utf8               我是锁
+  #25 = Class              #33            // java/io/PrintStream
+  #26 = NameAndType        #34:#35        // println:(Ljava/lang/String;)V
+  #27 = NameAndType        #12:#9         // testSync:()V
+  #28 = Utf8               java/lang/Object
+  #29 = Utf8               java/lang/Throwable
+  #30 = Utf8               java/lang/System
+  #31 = Utf8               out
+  #32 = Utf8               Ljava/io/PrintStream;
+  #33 = Utf8               java/io/PrintStream
+  #34 = Utf8               println
+  #35 = Utf8               (Ljava/lang/String;)V
+{
+  public com.example.demo.thread.User();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 9: 0
+
+  public static void testSync();
+    descriptor: ()V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=0
+         0: ldc           #2                  // class com/example/demo/thread/User
+         2: dup
+         3: astore_0
+         4: monitorenter
+         5: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         8: ldc           #4                  // String 我是锁
+        10: invokevirtual #5                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        13: aload_0
+        14: monitorexit
+        15: goto          23
+        18: astore_1
+        19: aload_0
+        20: monitorexit
+        21: aload_1
+        22: athrow
+        23: return
+      Exception table:
+         from    to  target type
+             5    15    18   any
+            18    21    18   any
+      LineNumberTable:
+        line 13: 0
+        line 14: 5
+        line 15: 13
+        line 16: 23
+      StackMapTable: number_of_entries = 2
+        frame_type = 255 /* full_frame */
+          offset_delta = 18
+          locals = [ class java/lang/Object ]
+          stack = [ class java/lang/Throwable ]
+        frame_type = 250 /* chop */
+          offset_delta = 4
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=0, locals=1, args_size=1
+         0: invokestatic  #6                  // Method testSync:()V
+         3: return
+      LineNumberTable:
+        line 19: 0
+        line 20: 3
+}
+SourceFile: "User.java"
