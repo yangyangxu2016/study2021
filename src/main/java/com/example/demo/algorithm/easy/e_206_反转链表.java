@@ -1,5 +1,6 @@
 package com.example.demo.algorithm.easy;
 
+
 /**
  * todo
  * date：2021/12/28  9:58 上午
@@ -16,23 +17,21 @@ public class e_206_反转链表 {
      * @param head
      * @return
      */
-    //public ListNode reverseList2(ListNode head) {
-    //
-    //    //    定义返回条件  只有一个节点了无需返回
-    //    if (head == null || head.next == null) {
-    //        return head;
-    //    }
-    //
-    //
-    //    //    处理
-    //
-    //
-    //    //    反转
-    //    head.next.next = head;
-    //    head.next = null;zz
-    //    //return last
-    //
-    //}
+    public ListNode reverseList2(ListNode head) {
+        ListNode dumy = new ListNode(-1);
+
+        while (head != null) {
+            ListNode temp = head.next;
+
+            //断开
+            head.next = dumy.next;
+            dumy.next = head;
+
+            head = temp;
+        }
+
+        return dumy.next;
+    }
 
 
     /**
@@ -45,18 +44,17 @@ public class e_206_反转链表 {
     public ListNode reverseList1(ListNode head) {
 
         ListNode prev = null;
-        ListNode curr = head;
-
-        while (curr != null) {
-            ListNode next = curr.next;
-
-            //处理指针反转
+        while (head != null) {
+            ListNode curr = head;
+            ListNode next = curr.next;//记录下一个节点
+            //    断开
             curr.next = prev;
+            //记录
             prev = curr;
 
-            curr = next;
+            //    返回头结点
+            head = next;
         }
         return prev;
     }
-
 }

@@ -10,21 +10,19 @@ package com.example.demo.algorithm.easy;
 public class e_22_链表中倒数第k个节点 {
 
     public ListNode getKthFromEnd(ListNode head, int k) {
-        //  快慢指针
+
         ListNode fast = head;
-        ListNode slow = head;
-        //    快指针先找到第k个
+        ListNode slow  = head;
+
         for (int i = 0; i < k; i++) {
             fast = fast.next;
         }
 
-        //    循环 快慢 ，快=null 找到慢
         while (fast != null) {
+            fast=fast.next;
             slow = slow.next;
-            fast = fast.next;
         }
 
-        //返回第k个节点
         return slow;
     }
 

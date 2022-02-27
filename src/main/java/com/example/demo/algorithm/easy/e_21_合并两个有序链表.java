@@ -10,33 +10,35 @@ package com.example.demo.algorithm.easy;
 public class e_21_合并两个有序链表 {
 
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        //哑结点
+
         ListNode dump = new ListNode(-1);
-        //这个会动
-        ListNode p = dump;
-        ListNode p1 = list1;
-        ListNode p2 = list2;
 
-        //这个是&& ，都不为空才进行合并
-        while (p1 != null && p2 != null) {
-            if (p1.val < p2.val) {
-                p.next = p1;
-                p1 = p1.next;
+        ListNode newList = dump;
+
+    //    分别遍历list1 和 list2 ,追加
+        while (list1 != null && list2 != null) {
+
+            if (list1.val <= list2.val) {
+                newList.next = list1;
+                list1 = list1.next;
             } else {
-                p.next = p2;
-                p2 = p2.next;
+                newList.next = list2;
+                list2 = list2.next;
             }
-            p = p.next;
+            //走一步
+            newList = newList.next;
+
         }
 
-        if (p1 != null) {
-            p.next = p1;
+    //    处理剩余链表
+        if (list1 != null) {
+            newList.next = list1;
         }
-        if (p2 != null) {
-            p.next = p2;
+        if (list2 != null) {
+            newList.next = list2;
         }
-
         return dump.next;
+
     }
 
 
