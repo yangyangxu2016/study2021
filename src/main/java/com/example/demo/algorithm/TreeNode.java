@@ -1,5 +1,8 @@
 package com.example.demo.algorithm;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * todo
  * date：2021/11/28  3:01 下午
@@ -7,14 +10,31 @@ package com.example.demo.algorithm;
  * @author xuyy
  */
 public class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
+
+    public TreeNode(int val) {
         this.val = val;
-        this.left = left;
-        this.right = right;
+        this.left = null;
+        this.right = null;
+    }
+
+    public int maxDepth(TreeNode root) {
+        int res =0;
+        int depth =0;
+        maxDepth(root,res,depth);
+        return res;
+    }
+
+    public void maxDepth(TreeNode root,int res,int depth) {
+        if(root == null){
+            res = Math.max(res,depth);
+        }
+        depth++;
+        maxDepth(root.left,res,depth);
+        maxDepth(root.right,res,depth);
+        depth--;
+
     }
 }
