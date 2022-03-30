@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * yml加载不了，properties可以
  * date：2021/3/8  5:13 下午
@@ -26,5 +28,12 @@ public class PropertiesTest {
     //public void init3() {
     //    System.out.println("name " + name + " pass: " + pass);
     //}
+
+
+    public static void main(String[] args) {
+        ReentrantLock lock = new ReentrantLock();
+        lock.lock();
+
+    }
 
 }
